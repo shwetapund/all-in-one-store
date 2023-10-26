@@ -18,9 +18,10 @@ const connectMongoDB = async () =>{
 }
 connectMongoDB();
 
+//signup
 app.post('/signup', async (req,res)=>{
     const {name, email,password, mobile, address, gender} = req.body;
-
+try{
     const obj = new User({
         name:name,
         email:email,
@@ -36,8 +37,37 @@ app.post('/signup', async (req,res)=>{
         Data:savedUser,
         message:"User added successfully"
     })
+}
+catch(e){
+    res.json({
+        success:false,
+        message:e.message
+    })
+}
 })
 
+//login
+
+app.get('/login', async (req,res)=>{
+    const {email, password} = req.body;
+
+    const findUser = await User.findOne({
+        email:email,
+        password:password
+    }).select('name mobile address gender')
+    if(!findUser){
+        return res.json({
+            success:false,
+            message:'invalid credential'
+        })
+    }
+
+    res.json({
+        success:true,
+        data: findUser,
+        message: "login successfully"
+    })
+})
 
 
 app.listen(PORT, ()=>{
