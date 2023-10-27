@@ -151,15 +151,26 @@ app.get('/find-one-product/:_id', async (req,res)=>{
         data:findSpecificproduct,
         message:"successfully fetch one product"
     })
+    
+})
 
+//app.delete('/product/:id) ----delete the product by id
 
+app.delete('/delete-the-product/:_id', async (req,res)=>{
+    const {_id} = req.params;
+
+    const deleteProduct = await Product.deleteOne({_id:_id})
+
+    res.json({
+       success:true,
+       data:deleteProduct,
+       message:`successfully delete this product ${_id}`
+    })
 })
 
 
 
 
-
-//app.delete('/product/:id)
 //app.search('/product?:)
 
 
