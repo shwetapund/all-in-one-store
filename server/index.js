@@ -19,7 +19,7 @@ const connectMongoDB = async () =>{
 }
 connectMongoDB();
 
-//signup
+//-----signup------
 app.post('/signup', async (req,res)=>{
     const {name, email,password, mobile, address, gender} = req.body;
 try{
@@ -113,12 +113,36 @@ app.get('/all-in-one-product', async (req,res)=>{
         data:findProduct,
         message:"successfully fetch Product"
     })
-    
+})
 
+//app.put('/product/:id)
+
+app.put('/all-in-one-product/:_id',async (req,res)=>{
+    const {_id} = req.params;
+
+    const {name,discription,brand, price, image} = req.body;
+
+    await Product.updateOne({_id:_id},{$set: {
+            name:name,
+            discription:discription,
+            brand:brand,
+            price:price,
+            image:image
+        }
+    })
+    const updateProduct = await Product.findOne({_id:_id})
+
+    res.json({
+        success:true,
+        data:updateProduct,
+        message:"Product update successfully"
+    })
 })
 
 
-//app.put('/product/:id)
+
+
+
 
 //app.get('/product/:id)
 
