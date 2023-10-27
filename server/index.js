@@ -139,12 +139,25 @@ app.put('/all-in-one-product/:_id',async (req,res)=>{
     })
 })
 
+//app.get('/product/:id) ------- get product by id -------
+
+app.get('/find-one-product/:_id', async (req,res)=>{
+    const {_id} = req.params
+
+    const findSpecificproduct = await Product.findOne({_id:_id})
+
+    res.json({
+        success:true,
+        data:findSpecificproduct,
+        message:"successfully fetch one product"
+    })
+
+
+})
 
 
 
 
-
-//app.get('/product/:id)
 
 //app.delete('/product/:id)
 //app.search('/product?:)
