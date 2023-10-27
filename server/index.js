@@ -168,10 +168,20 @@ app.delete('/delete-the-product/:_id', async (req,res)=>{
     })
 })
 
+//search the secific product
 
+app.get('/product-search', async (req,res)=>{
+    const {q} = req.query;
 
+    const searchProduct = await Product.find({name: {$regex : q , $options : 'i'}});
 
-//app.search('/product?:)
+    res.json({
+        success:true,
+        data:searchProduct,
+        message:"search Product successfully"
+    })
+})
+
 
 
 
