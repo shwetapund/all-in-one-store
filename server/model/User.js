@@ -22,10 +22,12 @@ const UserSchema = new Schema({
     address:{
         type: String,
     },
-
-  
     gender:String
-})
+},
+{
+    timestamps:true
+}
+)
 
 const User = model('User',UserSchema);
 

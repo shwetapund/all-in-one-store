@@ -1,6 +1,7 @@
 import express from "express"
 import mongoose  from "mongoose"
 import User from "./model/User.js";
+import Product from "./model/Product.js";
 import dotenv from "dotenv"
 dotenv.config();
 
@@ -68,6 +69,51 @@ app.get('/login', async (req,res)=>{
         message: "login successfully"
     })
 })
+
+//app.post('/products')
+
+app.post('/products', async (req,res)=>{
+    const {name, discription, brand, price, image} = req.body;
+
+    const ProductData = await new Product({
+        name:name,
+        discription:discription,
+        brand:brand,
+        price:price,
+        image:image
+    })
+
+   try{
+    const savedProduct = await ProductData.save();
+
+    res.json({
+        success:true,
+        data: savedProduct,
+        message:"successfully created Product"
+    })
+   }
+   catch(e){
+    res.json({
+       success:false,
+       message:e.message
+
+    })
+   }
+})
+
+
+
+
+
+
+//app.post('/product')
+//app.put('/product/:id)
+
+//app.get('/product/:id)
+
+//app.delete('/product/:id)
+//app.search('/product?:)
+
 
 
 app.listen(PORT, ()=>{
