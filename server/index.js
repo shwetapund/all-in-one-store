@@ -101,12 +101,23 @@ app.post('/products', async (req,res)=>{
    }
 })
 
+//app.get('/product')
+
+app.get('/all-in-one-product', async (req,res)=>{
+
+    const findProduct = await Product.find();
 
 
+    res.json({
+        success:true,
+        data:findProduct,
+        message:"successfully fetch Product"
+    })
+    
+
+})
 
 
-
-//app.post('/product')
 //app.put('/product/:id)
 
 //app.get('/product/:id)
