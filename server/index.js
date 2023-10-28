@@ -248,6 +248,23 @@ app.get('/order/user/:_id',async (req,res)=>{
 
 })
 
+//app.patch('/order/status/:_id')
+
+app.patch('/order/status/:_id',async (req,res)=>{
+    const {_id} = req.params;
+
+    const {status} = req.body;
+const updateStatus = await Order.updateOne({_id:_id}, {$set:{status:status}})
+
+
+
+res.json({
+    success:true,
+  
+    message:"successfully update status"
+})
+
+})
 
 app.listen(PORT, ()=>{
     console.log(`your server is running on ${PORT}`)
