@@ -185,14 +185,15 @@ app.get('/product-search', async (req,res)=>{
 //app.post('/order')
 
 app.post('/order', async (req,res)=>{
-    const {user, product, quantity, shippingAddress, deliveryCharge} = req.body;
+    const {user, product, quantity, shippingAddress, deliveryCharge, status} = req.body;
 
     const createorder = new Order({
         user:user,
         product:product,
         quantity:quantity,
         shippingAddress:shippingAddress,
-        deliveryCharge:deliveryCharge
+        deliveryCharge:deliveryCharge,
+        status:status
     })
  try{
     const savedOrder = await createorder.save();
@@ -211,7 +212,7 @@ app.post('/order', async (req,res)=>{
  }
 })
 
-//app.get('order') using popular
+//app.get('/order') using popular
 
 app.get('/getallorder',async (req,res)=>{
     
@@ -227,7 +228,25 @@ app.get('/getallorder',async (req,res)=>{
     })
 })
 
-//
+//app.get('/order/user/:_id')
+
+app.get('/order/user/:_id',async (req,res)=>{
+    const {_id} = req.params;
+
+    const fetchAllorder = await Order.find({user:_id}).populate('user product');
+
+    fetchAllorder.forEach((order)=>{
+        order.user.password = undefined;
+    })
+
+    res.json({
+        success:true,
+        data:fetchAllorder,
+        message:"fsuccessfully fetch all order"
+    })
+    
+
+})
 
 
 app.listen(PORT, ()=>{

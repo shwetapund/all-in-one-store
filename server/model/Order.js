@@ -23,6 +23,10 @@ const orderSchema = new Schema({
     deliveryCharge:{
         type:Number,
         required:true
+    },
+    status:{
+        type:String,
+        default:"pending"
     }
 },
 {
