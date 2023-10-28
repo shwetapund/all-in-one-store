@@ -2,9 +2,9 @@ import express from "express"
 import mongoose  from "mongoose"
 import User from "./model/User.js";
 import Product from "./model/Product.js";
+import Order from "./model/Order.js";
 import dotenv from "dotenv"
 dotenv.config();
-
 
 const app = express();
 app.use(express.json());
@@ -182,7 +182,52 @@ app.get('/product-search', async (req,res)=>{
     })
 })
 
+//app.post('/order')
 
+app.post('/order', async (req,res)=>{
+    const {user, product, quantity, shippingAddress, deliveryCharge} = req.body;
+
+    const createorder = new Order({
+        user:user,
+        product:product,
+        quantity:quantity,
+        shippingAddress:shippingAddress,
+        deliveryCharge:deliveryCharge
+    })
+ try{
+    const savedOrder = await createorder.save();
+
+    res.json({
+        success:true,
+        data:savedOrder,
+        message:"order create successfully"
+    })
+ }
+ catch(e){
+ res.json({
+    success:false,
+    message:e.message
+ })
+ }
+})
+
+//app.get('order') using popular
+
+app.get('/getallorder',async (req,res)=>{
+    
+    const findOrder = await Order.find().populate('user product');
+
+    findOrder.forEach((order)=>{
+        order.user.password = undefined;
+    })
+    res.json({
+        success:true,
+        data:findOrder,
+        message:"successfully fetch all order"
+    })
+})
+
+//
 
 
 app.listen(PORT, ()=>{
