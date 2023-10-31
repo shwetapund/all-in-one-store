@@ -75,7 +75,7 @@ app.get('/login', async (req,res)=>{
 app.post('/products', async (req,res)=>{
     const {name, discription, brand, price, image} = req.body;
 
-    const ProductData = await new Product({
+    const ProductData = new Product({
         name:name,
         discription:discription,
         brand:brand,
@@ -242,7 +242,7 @@ app.get('/order/user/:_id',async (req,res)=>{
     res.json({
         success:true,
         data:fetchAllorder,
-        message:"fsuccessfully fetch all order"
+        message:"successfully fetch all order"
     })
     
 
