@@ -1,8 +1,24 @@
 body{
     background-color: rgb(248, 216, 248);
 }
-
-.form-controll{
+.text-center{
+    text-align: center;
+}
+.form-control{
     display: block;
-    font-size: 25px;
+    font-size: 16px;
+    padding: 5px 10px;
+    width: 250px;
+    margin-bottom: 20px;
+   
+}
+.btn{
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    min-width: 100px;
+    font-size: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
 }

@@ -1,6 +1,20 @@
 .form-conatainer{
-    border:1px solid black;
-    height: 450px;
-    width: 300px;
+    width: fit-content;
     background-color: white;
+    margin: 30px auto;
+    padding: 20px 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px lightgray;
+}
+.form-sub-container{
+    display: block;
+    
+}
+.gender{
+    margin-left: 20px;
+}
+.signup-btn{
+    display: block;
+    margin: 10px auto;
+    width: 150px;
 }
