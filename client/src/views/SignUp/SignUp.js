@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import signupimg from "./signup.svg";
 import Navbar from "./../../components/Navbar/Navbar";
@@ -52,6 +52,17 @@ const signup = async ()=>{
     alert(response?.data?.message);
   }
 }
+useEffect(()=>{
+  const storageUser = JSON.parse(localStorage.getItem("user") || '{}');
+
+  if(storageUser?.email){
+    alert("You are already logged in!");
+    window.location.href = "/";
+  }
+}, [])
+
+
+
   return (<>
     <Navbar/>
     <div className='signup-container' >

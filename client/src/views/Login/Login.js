@@ -1,4 +1,4 @@
-import React, {useState}from 'react'
+import React, {useEffect, useState}from 'react'
 import axios from "axios";
 import './Login.css';
 import Navbar from './../../components/Navbar/Navbar';
@@ -23,6 +23,15 @@ function Login() {
     }
     
   }
+  useEffect(()=>{
+    const storageUser = JSON.parse(localStorage.getItem("user") || '{}');
+
+    if(storageUser?.email){
+      alert("You are already logged in!");
+      window.location.href = "/";
+    }
+  }, [])
+
 
   return (
     <>
