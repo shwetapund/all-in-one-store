@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import signupimg from "./signup.svg";
-import Navbar from "./../components/Navbar/Navbar";
+import Navbar from "./../../components/Navbar/Navbar";
 import "./SignUp.css";
 import { Link } from 'react-router-dom';
 
@@ -34,7 +34,6 @@ const signup = async ()=>{
     alert("gender is required");
     return;
   }
-
 
   const response = await axios.post('/signup',{
     name:name,

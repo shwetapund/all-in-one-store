@@ -1,8 +1,9 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Home from "./Home/Home";
-import Login from "./Login/Login";
-import SignUp from "./SignUp/SignUp";
+import Home from "./views/Home/Home";
+import Login from "./views/Login/Login";
+import SignUp from "./views/SignUp/SignUp";
+import MyOrders from "./views/MyOrders/MyOrders";
 
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 
@@ -20,7 +21,12 @@ const router = createBrowserRouter([
     {
         path:'/signup',
         element:<SignUp/>
+    },
+    {
+        path:'/orders',
+        element:<MyOrders/>
     }
+
 ])
 
 root.render(

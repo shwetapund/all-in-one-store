@@ -1,7 +1,7 @@
 import React, {useState}from 'react'
 import axios from "axios";
 import './Login.css';
-import Navbar from '../components/Navbar/Navbar';
+import Navbar from './../../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 
 function Login() {
@@ -28,8 +28,6 @@ function Login() {
     <>
     <div>
       <Navbar/>
-    </div>
-    <div>
       <form className='login-container'>
         <h1 className='text-center'>Login</h1>
        
