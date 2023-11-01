@@ -1,6 +1,4 @@
-body{
-    background-color: rgb(248, 216, 248);
-}
+
 .text-center{
     text-align: center;
 }
@@ -21,4 +19,13 @@ body{
     padding: 10px 20px;
     text-align: center;
     color: #fff;
+}
+.Link-text{
+    text-align: center;
+}
+.link{
+    text-decoration: none;
+}
+.text-right{
+    text-align: right;
 }

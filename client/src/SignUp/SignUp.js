@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import axios from 'axios';
+import signupimg from "./signup.svg";
+import Navbar from "./../components/Navbar/Navbar";
 import "./SignUp.css";
+import { Link } from 'react-router-dom';
 
 function SignUp() {
   const [name, setName] = useState('')
@@ -50,8 +53,10 @@ const signup = async ()=>{
     alert(response?.data?.message);
   }
 }
-  return (
-    <div >
+  return (<>
+    <Navbar/>
+    <div className='signup-container' >
+      <img src={signupimg} className='signup-img'/>
       <form className='form-conatainer'>
 
         <h1 className='text-center'>SignUp</h1>
@@ -156,10 +161,13 @@ const signup = async ()=>{
         <button type="button" className='btn signup-btn'
         onClick={signup}>sign up</button>
 
+        <p className='text-right'>
+       <Link to="/login">You have already account ?</Link></p>
         </div>
       </form>
 
     </div>
+    </>
   )
 }
 
