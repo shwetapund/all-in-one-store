@@ -55,7 +55,7 @@ app.post('/login', async (req,res)=>{
     const findUser = await User.findOne({
         email:email,
         password:password
-    }).select('name mobile address gender')
+    }).select('name mobile address gender email')
     if(!findUser){
         return res.json({
             success:false,

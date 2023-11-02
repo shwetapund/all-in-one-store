@@ -4,6 +4,8 @@ import Home from "./views/Home/Home";
 import Login from "./views/Login/Login";
 import SignUp from "./views/SignUp/SignUp";
 import MyOrders from "./views/MyOrders/MyOrders";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 
