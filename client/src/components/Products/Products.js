@@ -1,7 +1,9 @@
 import React from 'react'
 import "./Products.css";
+import { Link } from 'react-router-dom';
 
-function Products({name, discription, brand, price, image}) {
+function Products({_id,name, discription, brand, price, image}) {
+
   return (
     <div className='product-container'>
       <img src = {image} className='img-product'/>
@@ -9,6 +11,9 @@ function Products({name, discription, brand, price, image}) {
       <p className='product-card-discr'>{discription}</p>
       <p>{brand}</p>
       <h4 className='product-card-price'>Rs. ₹ {price} </h4>
+
+      <Link to={`/buy/${_id}`}><button className='buy-btn btn'
+     >Buy Now</button></Link>
     </div>
   )
 }

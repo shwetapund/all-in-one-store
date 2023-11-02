@@ -24,6 +24,7 @@ body{
     padding: 10px 20px;
     text-align: center;
     color: #fff;
+    cursor: pointer;
 }
 .Link-text{
     text-align: center;

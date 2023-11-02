@@ -4,6 +4,7 @@ import Home from "./views/Home/Home";
 import Login from "./views/Login/Login";
 import SignUp from "./views/SignUp/SignUp";
 import MyOrders from "./views/MyOrders/MyOrders";
+import BuyNow from "./views/BuyNow/BuyNow";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min';
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
     {
         path:'/orders',
         element:<MyOrders/>
+    },
+    {
+        path:'/buy/:_id',
+        element:<BuyNow/>
     }
 
 ])

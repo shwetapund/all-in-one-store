@@ -1,6 +1,6 @@
 .product-container{
    box-shadow: 0px 0px 10px 1px lightgrey;
-    /* height: 400px; */
+    height: 440px;
     width:270px;
     border: 1x solid white;
     /* border-radius: 10px; */
@@ -19,7 +19,7 @@
 .product-card-discr{
     font-size: 15px;
     font-weight: 400;
-    color: rgb(1, 44, 44);
+    color: rgb(10, 11, 11);
     /* display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -28,8 +28,18 @@
 }
 .product-card-name{
     font-size:20px;
-    color: rgb(1, 63, 10);
+    color: rgb(0, 8, 1);
 }
 .product-card-price{
     color: red;
+}
+
+.buy-btn{
+
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    font-size: 18px;
+    margin-bottom: 50px;
+    
 }

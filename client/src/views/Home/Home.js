@@ -28,17 +28,17 @@ function Home() {
   return (
     <>
       <Navbar />
- 
+{/*  
       <div>
         <img src ="https://www.edesk.com/wp-content/uploads/2019/12/profitable-ecommerce-ideas-768x367.png" className='front-img'/>
-      </div>
+      </div> */}
 
-      <h1 className='text-center'>Trending deals</h1>
+      <h2 className='text-center'>Trending deals</h2>
       <div className='product-flex'>
         {
           products?.map((product, index)=>{
 
-            const {name, discription, brand, price, image} = product;
+            const {_id,name, discription, brand, price, image} = product;
 
            return <Products 
             key={index}
@@ -46,6 +46,7 @@ function Home() {
             discription={discription} 
             price={price} 
             image={image}
+            _id={_id}
            />
 
           })
