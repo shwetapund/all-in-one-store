@@ -6,7 +6,7 @@
     width: 1000px;
     padding: 10px 20px ;
     margin-left: 160px;
-
+    margin-bottom: 50px;
 }
 .img-product{
     height: 400px; 
@@ -37,7 +37,41 @@
     color:red;
 }
 .product-brand{
+    font-size: 20px; 
+}
+.increment{
+    cursor: pointer;
+    padding: 15px 15px;
+    background-color: aquamarine;
+    border-radius: 70%;
+    margin: 20px;
+}
+.decreQuantity{
+    cursor: pointer;
+    padding: 15px 15px;
+    background-color: aquamarine;
+    border-radius: 70%;
+    margin: 20px;
+}
+.quantity{
+    font-size: 45px;
+    font-weight: bold;
+    margin:5px 15px ;
+}
+.quantity-text{
+    font-size: 25px;
+    font-weight: bold;
+}
+.input-product-address{
+    margin-top:30px;
+    width: 300px;
+    height: 50px;
     font-size: 20px;
-
-   
+    padding: 10px 20px;
+}
+.btn-place-order{
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+    cursor: pointer;
 }

@@ -6,7 +6,7 @@ function Products({_id,name, discription, brand, price, image}) {
 
   return (
     <div className='product-container'>
-      <img src = {image} className='img-product'/>
+      <img src = {image} className='img-products'/>
       <h3 className='product-card-name'>{name}</h3>
       <p className='product-card-discr'>{discription}</p>
       <p>{brand}</p>

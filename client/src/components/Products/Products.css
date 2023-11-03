@@ -9,9 +9,9 @@
     margin: 10px 20px;
     /* background-color:whitesmoke; */
 }
-.img-product{
+.img-products{
     height: 200px;
-   width: 100%;
+   width: fit-content;
     display: block;
     margin: 0 auto;
    
