@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 import {Link} from 'react-router-dom';
 import LogoutImg from "./logout-1.png";
-
+import logoImg from "./webshop.png";
 
 function Navbar() {
 const [user, setUser] = useState({});
@@ -16,7 +16,8 @@ useEffect(()=>{
 
     <div className='navbar'>
           <div>
-            <Link to="/" className='navbar-brand '>All In One Store</Link>
+            <Link to="/" className='navbar-brand '>
+            <img src={logoImg} className='navbar-logo'/> All In One Store</Link>
           </div>
           <div className='navbar-links-container'>
             <Link to="/login" className='navbar-link'>Login</Link>
