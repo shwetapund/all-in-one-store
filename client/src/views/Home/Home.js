@@ -8,6 +8,21 @@ import Products from "./../../components/Products/Products";
 function Home() {
 
   const [products, setProducts] = useState([]);
+const [search, setSearch] = useState('')
+
+const searchProducts = async ()=>{
+if(search === ''){
+  loadProduct();
+  return;
+}
+
+
+const response = await axios.get(`/product-search?q=${search}`);
+setProducts(response?.data?.data);
+}
+useEffect(()=>{
+searchProducts();
+},[search])
 
   const loadProduct = async ()=>{
    try{
@@ -32,6 +47,13 @@ function Home() {
       <div>
         <img src ="https://www.edesk.com/wp-content/uploads/2019/12/profitable-ecommerce-ideas-768x367.png" className='front-img'/>
       </div> */}
+      <input type='text'
+       placeholder='Search'
+        className='search-bar'
+        value={search}
+        onChange={(e)=>{
+          setSearch(e.target.value)
+        }}/> 
 
       <h2 className='text-center'>Trending deals</h2>
       <div className='product-flex'>

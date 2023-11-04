@@ -10,10 +10,32 @@
     width: 700px;
     display: flex;
     margin: 20px;
+    padding:20px;
+    position: relative;
 }
 .order-product-img{
     height: 200px;
     width: 200px;
      display: block;
      margin: 0 auto;
+}
+.order-status{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 20px;
+    color:white;
+    padding: 2px 10px;
+    border-radius: 5px;
+    width: 80px;
+    text-align: center;
+}
+.badge-danger{
+background-color: red;
+}
+.badge-warning{
+background-color: orange;
+}
+.badge-success{
+background-color: green;
 }

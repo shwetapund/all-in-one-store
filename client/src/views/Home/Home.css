@@ -9,6 +9,17 @@
     margin: 20px 50px;
     object-fit: contain;
 }
+.search-bar{
+    width: 300px;
+    display: block;
+    font-size: 30px;
+    margin: 20px auto;
+    border-radius: 50px;
+    padding: 5px 20px;
+    border: 1px solid #ccc;
+}
+
+
 @media screen and (max-width:750px){
     .product-flex{
         display: flex;
