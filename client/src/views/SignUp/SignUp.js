@@ -61,8 +61,6 @@ useEffect(()=>{
   }
 }, [])
 
-
-
   return (<>
     <Navbar/>
     <div className='signup-container' >

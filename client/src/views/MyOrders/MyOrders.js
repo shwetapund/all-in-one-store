@@ -17,7 +17,7 @@ function MyOrders() {
 
   useEffect(() => {
     const storageUse = JSON.parse(localStorage.getItem("user") || '{}');
-
+  
     if (storageUse?.email) {
       setUser(storageUse);
     }

@@ -12,7 +12,7 @@ function Products({_id,name, discription, brand, price, image}) {
       <p>{brand}</p>
       <h4 className='product-card-price'>Rs. ₹ {price} </h4>
 
-      <Link to={`/buy/${_id}`}><button className='buy-btn btn'
+      <Link to={`/buy/${_id}`} className='link-btn'><button className='buy-btn btn'
      >Buy Now</button></Link>
     </div>
   )
